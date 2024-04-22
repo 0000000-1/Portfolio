@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            border: none;
+            outline: none;
+            background: black;
+            color: #fff;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            height: 10vh;
+            flex-wrap: wrap;
+            backdrop-filter: blur(2px);
+            background: rgba(36, 35, 35, 0.308);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 45px;
+        }
+
+        .navbar span {
+            color: #fff;
+            font-size: 22px;
+            font-family: 'Courier New', Courier, monospace;
+            letter-spacing: 10px;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul span li a {
+            display: none;
+        }
+
+        .navbar ul li a {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: none;
+            color: gold;
+            padding: 10px 13px;
+            transition: .4s;
+        }
+
+        .navbar ul li a:hover {
+            background: gold;
+            color: #232323;
+            border: 1px solid black;
+        }
+
+        #home {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+            background: #030303;
+        }
+
+        .home-content {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: baseline;
+            flex-direction: column;
+            padding: 0 0 0 20px;
+            width: 350px;
+            text-align: start;
+
+        }
+
+        .home-content span {
+            color: #fff;
+            animation: tubelight 5s linear infinite;
+        }
+
+        @keyframes tubelight {
+
+            0%,
+            18%,
+            20%,
+            50.1%,
+            60%,
+            65.1%,
+            80%,
+            90.1%,
+            92% {
+                color: #fff;
+                text-shadow: 0 0 10px grey;
+            }
+
+            18.1%,
+            20.1%,
+            30%,
+            50%,
+            60.1%,
+            65.1%,
+            80.1%,
+            90%,
+            100% {
+                color: #fff;
+                text-shadow: 0 0 5px yellow,
+                    0 0 10px yellow,
+                    0 0 20px yellow,
+                    0 0 60px yellow,
+                    0 0 120px yellow;
+            }
+        }
+
+        #home h1 {
+            color: gold;
+            font-size: 50px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        #btn {
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            background: gold;
+            padding: 10px 15px;
+            transition: .5s;
+        }
+
+        #btn:hover {
+            cursor: pointer;
+            color: #fff;
+            background: transparent;
+            border: 1px solid gold;
+        }
+
+        .png-character {
+            height: 400px;
+            width: 250px;
+        }
+
+        /* work */
+
+        #work {
+            height: 100%;
+            margin: 100px 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+        }
+
+        #work span {
+            display: flex;
+            justify-content: center;
+        }
+
+        #work h1 {
+            text-align: center;
+            color: white;
+            font-size: 50px;
+            width: 30%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        hr {
+            z-index: -1;
+            margin: -65px 0 25px 0;
+        }
+
+        .work_content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            margin: 50px 0 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 330px;
+            width: 230px;
+            transition: .4s;
+            gap: 15px;
+            border-radius: 20px;
+            border: 1px solid #232323;
+            color: #fff;
+            background: #030303;
+            text-align: center;
+        }
+
+        .project:hover {
+            background: #111111;
+        }
+
+        .project a:hover {
+            color: #232323;
+            background: gold;
+        }
+
+        .project h2 {
+            font-family: serif;
+        }
+
+        .project p {
+            font-size: 12px;
+            padding: 0 10px;
+        }
+
+        .project a {
+            transition: .4s;
+            color: gold;
+            border-radius: 10px;
+            padding: 5px 20px;
+            background: #232323;
+            font-size: 12px;
+            text-decoration: none;
+        }
+
+        img {
+            padding: 10px;
+            height: 140px;
+            width: 190px;
+        }
+
+        /* contact */
+
+        #contact {
+            background: #030303;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 50px 0;
+        }
+
+        .contact_content {
+            max-width: 350px;
+            padding: 40px 20px 40px 20px;
+            font-family: serif;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            gap: 20px;
+            flex-direction: column;
+        }
+
+        .contact_content h1 {
+            font-size: 6vw;
+            text-align: right;
+            color: gold;
+        }
+
+        form {
+            padding: 20px 0;
+            border: none;
+            outline: none;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            display: flex;
+            border: none;
+            outline: none;
+        }
+
+        label {
+            text-align: start;
+            color: gold;
+        }
+
+        form input[type="text"] {
+            background: #232323;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            color: #fff;
+        }
+
+        form input[type="email"] {
+            padding: 10px;
+            border-radius: 10px;
+            background: #232323;
+            border: none;
+            outline: none;
+            color: #fff;
+        }
+
+        textarea {
+            background: #232323;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            color: #fff;
+        }
+
+        form input[type="button"] {
+            font-size: 16px;
+            background: gold;
+            border: 1px solid gold;
+            outline: none;   
+            border-radius: 10px;
+            height: 40px;
+            width: 100px;
+            cursor: pointer;
+            transition: .5s;
+        }
+
+        form input[type="button"]:hover {
+
+            background: #232323;
+            color: gold;
+        }
+
+
+        /* services */
+        #services {
+            height: 100%;
+            margin: 100px 0;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            justify-content: center;
+        }
+
+        #services span {
+            display: flex;
+            justify-content: center;
+        }
+
+        #services h1 {
+            display: flex;
+            justify-content: center;
+            /* text-align: center; */
+            color: white;
+            font-size: 50px;
+            width: 30%;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .service_content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .service {
+            margin: 50px 0 0 0;
+            display: flex;
+            flex-direction: column;
+            /* height: 330px; */
+            width: 250px;
+            transition: .4s;
+            border-radius: 20px;
+            border: 1px solid #232323;
+            color: #fff;
+            background: #030303;
+            text-align: center;
+        }
+
+        .service:hover {
+            background: #111111;
+        }
+
+        .service h2 {
+            border: .5px solid gold;
+            color: gold;
+            padding: 20px;
+            border-radius: 0 0 10px 10px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 100;
+            border-top: gold;
+            border-left: gold;
+            border-right: gold;
+        }
+
+        .service ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: left;
+            padding: 20px 20px 20px 30px;
+            align-items: baseline;
+        }
+
+        .service ul li {
+            font-size: 14px;
+        }
+
+        @media screen and (max-width: 600px) {
+            .navbar {
+                height: 14vh;
+                /* justify-content: center; */
+                justify-content: space-between;
+            }
+
+            .navbar span {
+                font-size: 26px;
+            }
+
+            .navbar ul span li a {
+                display: block;
+                font-size: 20px;
+                transform: rotate(90deg);
+                letter-spacing: 0;
+                color: #fff;
+                font-weight: 100;
+            }
+
+            .navbar ul li a {
+                display: none;
+                padding: 7px 10px;
+            }
+
+            /* home */
+
+            .home-content {
+                cursor: pointer;
+                text-align: center;
+                align-items: center;
+                margin: 100px 0 0 0;
+                padding: 0 30px;
+            }
+
+            #home h1 {
+                font-size: 35px;
+            }
+
+            #home p {
+                font-size: 12px;
+            }
+            #home{
+                height: 80vh;
+            }
+            .png-character {
+                height: 300px;
+                width: 200px;
+            }
+
+            /* work */
+
+            #work h1 {
+                font-size: 40px;
+                width: 100%;
+            }
+
+            #services h1 {
+                font-size: 40px;
+                width: 100%;
+
+            }
+
+            .project a {
+                font-size: 10px;
+            }
+            .project h2{
+                font-size: 18px;
+            }
+            .project p{
+                font-size: 10px;
+            }
+            /* form */
+
+            form {
+                padding: 20px;
+            }
+
+            /* service */
+
+            .service ul li {
+            font-size: 12px;
+        }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <span>Sumit</span>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <span>
+                <li><a href="">III</a></li>
+            </span>
+        </ul>
+    </nav>
+    <section id="home">
+        <div class="home-content">
+            <h1>Full Stack <span>Developer</span></h1>
+            <p>Hey I'm Sumit a passionate Full Stack Developer with experience building responsive and dynamic web application. I
+                am Dedicated to delivering high-quality work and staying with the latest technologies.</p>
+            <button id="btn" href="#contact">Let's Talk</button>
+        </div>
+        <img class="png-character" src="../simpleportfolio/imgs/png-character.png" alt="">
+    </section>
+    <section id="work">
+        <span>
+            <h1>My Work </h1>
+        </span>
+        <div class="work_content">
+            <div class="project">
+                <img src="../simpleportfolio/imgs/Screenshot (19).png" alt="">
+                <h2> Netflix UI Clone</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum error provident ipsa.</p>
+                <a href="">View</a>
+            </div>
+            <div class="project">
+                <img src="../simpleportfolio/imgs/Screenshot (15).png" alt="">
+                <h2> Mini-Tv UI Clone</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum error provident ipsa.</p>
+                <a href=""> View</a>
+            </div>
+
+            <div class="project">
+                <img src="../simpleportfolio/imgs/pic3.jpg" alt="">
+                <h2> Netflix UI Clone</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum error provident ipsa.</p>
+                <a href=""> View</a>
+            </div>
+        </div>
+
+    </section>
+    <section id="services">
+        <span>
+            <h1>Services </h1>
+        </span>
+        <div class="service_content">
+            <div class="service">
+                <h2> UI/UX Design</h2>
+                <ul>
+                    <li>Gather and evaluate user requirement in collaboration with product managers and enginner</li>
+                    <li>Design graphic user interface element, like menus, tabs and widgets</li>
+                    <li>Build page navigation buttons and search fields</li>
+                    <li>Conduct layout adjustment based on user feedback</li>
+                    <li>Adhere to style standards on fonts, colors and images</li>
+                </ul>
+            </div>
+            <div class="service">
+                <h2> Web Development</h2>
+                <ul>
+                    <li>Full stack Development</li>
+                    <li>Logo design</li>
+                    <li>Static website</li>
+                    <li>Land page website</li>
+                    <li>Corporate Website</li>
+                    <li>Social media management (SEO)</li>
+                    <li>Awesome Ui interface</li>
+                    <li>Responsive Design</li>
+                    <li>Customize Website</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+    <section id="contact">
+        <div class="contact_content">
+            <h1><span style="color: #fff;">Let's</span> Talk</h1>
+            <span>
+                we genuinely care about you and your wellbeing. Let us know how we can serve you better.
+            </span>
+        </div>
+        <form>
+            <label for="name">Your Name</label><input type="text" id="name" placeholder="your name">
+            <label for="email">Your Email</label><input type="email" id="email" placeholder="your email">
+            <label for="message">Your Message</label><textarea id="message" cols="30" rows="10"
+                placeholder="enter your message..."></textarea>
+            <input type="button" value="submit">
+        </form>
+    </section>
+</body>
+
+</html>
