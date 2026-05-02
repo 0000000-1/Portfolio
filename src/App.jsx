@@ -11,7 +11,7 @@ import Projects from "./pages/Projects.jsx"
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Portfolio">
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />
