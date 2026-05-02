@@ -5,4 +5,6 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
   ],
+   base: "/Portfolio/", // This must match your repo name exactly
+  plugins: [react()],
 })
