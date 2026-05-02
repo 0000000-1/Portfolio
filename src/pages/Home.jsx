@@ -32,10 +32,10 @@ const Home = () => {
 
             {/* 4. Action Buttons - Smaller padding */}
             <div className="flex items-center gap-6 mb-16">
-              <a href="/work" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-[12px] font-bold uppercase tracking-widest transition-all">
+              <a href="/Portfolio/work" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-[12px] font-bold uppercase tracking-widest transition-all">
                 Work
               </a>
-              <a href="/contact" className="text-white text-sm font-bold uppercase tracking-widest border-b border-red-500 pb-1 hover:text-red-500 transition-colors">
+              <a href="/Portfolio/contact" className="text-white text-sm font-bold uppercase tracking-widest border-b border-red-500 pb-1 hover:text-red-500 transition-colors">
                 Get in touch
               </a>
             </div>

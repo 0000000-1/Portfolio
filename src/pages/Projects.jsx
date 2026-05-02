@@ -18,7 +18,7 @@ const Projects = () => {
       label: "Login App",
       title: "Secure Auth System",
       description: "A clean login/signup flow using JWT and React context.",
-      image: "./src/assets/login_app_image.png",
+      image: "/Portfolio/login_app_image.png",
       status: 'done',
       previewUrl: 'https://mern-login-theta.vercel.app/',
       githubUrl:'https://github.com/0000000-1/mern-login'
