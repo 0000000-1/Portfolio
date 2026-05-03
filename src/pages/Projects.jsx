@@ -1,4 +1,5 @@
 import React from 'react'
+import login_image from '../assets/login_app_image.png'
 
 const Projects = () => {
   // 1. Keep data separate from the UI
@@ -18,7 +19,7 @@ const Projects = () => {
       label: "Login App",
       title: "Secure Auth System",
       description: "A clean login/signup flow using JWT and React context.",
-      image: "/Portfolio/login_app_image.png",
+      image: login_image,
       status: 'done',
       previewUrl: 'https://mern-login-theta.vercel.app/',
       githubUrl:'https://github.com/0000000-1/mern-login'
