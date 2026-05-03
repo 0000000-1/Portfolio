@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'; // Ensure you're using react-router-dom
 
 const Home = () => {
   return (
@@ -32,12 +33,12 @@ const Home = () => {
 
             {/* 4. Action Buttons - Smaller padding */}
             <div className="flex items-center gap-6 mb-16">
-              <a href="/Portfolio/work" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-[12px] font-bold uppercase tracking-widest transition-all">
+              <Link to="/work" className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 text-[12px] font-bold uppercase tracking-widest transition-all">
                 Work
-              </a>
-              <a href="/Portfolio/contact" className="text-white text-sm font-bold uppercase tracking-widest border-b border-red-500 pb-1 hover:text-red-500 transition-colors">
+              </Link>
+              <Link to="/contact" className="text-white text-sm font-bold uppercase tracking-widest border-b border-red-500 pb-1 hover:text-red-500 transition-colors">
                 Get in touch
-              </a>
+              </Link>
             </div>
 
             {/* 5. Compact Stack Overview - Tighter grid */}
