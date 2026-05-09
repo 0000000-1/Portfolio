@@ -11,7 +11,7 @@ const Projects = () => {
       description: "Full-stack todo list with user authentication and MongoDB.",
       image: "./src/assets/portfolio.jpg",
       status: 'in-progress', // done or in-progress
-      previewUrl: '',
+      previewUrl: 'https://mern-todo-orpin.vercel.app/',
       githubUrl:'https://github.com/0000000-1/mern-todo'
     },
     {
