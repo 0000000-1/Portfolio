@@ -1,5 +1,6 @@
 import React from 'react'
 import login_image from '../assets/login_app_image.png'
+import task_manager from '../assets/task_manager.png'
 
 const Projects = () => {
   // 1. Keep data separate from the UI
@@ -9,8 +10,8 @@ const Projects = () => {
       label: "Todo App",
       title: "MERN Task Manager",
       description: "Full-stack todo list with user authentication and MongoDB.",
-      image: "./src/assets/portfolio.jpg",
-      status: 'in-progress', // done or in-progress
+      image: task_manager,
+      status: 'done', // done or in-progress
       previewUrl: 'https://mern-todo-orpin.vercel.app/',
       githubUrl:'https://github.com/0000000-1/mern-todo'
     },
