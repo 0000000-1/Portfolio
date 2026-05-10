@@ -24,6 +24,16 @@ const Projects = () => {
       status: 'done',
       previewUrl: 'https://mern-login-theta.vercel.app/',
       githubUrl:'https://github.com/0000000-1/mern-login'
+    },
+    {
+      id: 3,
+      label: "E-Com App",
+      title: "E-Com FullStack",
+      description: "A clean UI with login/signup with React context.",
+      image: '',
+      status: 'in-progress',
+      previewUrl: '',
+      githubUrl:''
     }
   ];
 
